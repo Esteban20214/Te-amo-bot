@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Poema</title>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --fondo: #add8e6; /* celeste */
+            --rosa: #ffc0cb; /* rosa claro */
+        }
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background: var(--fondo);
+            font-family: 'Spectral', serif;
+            text-align:center;
+            padding:20px;
+            box-sizing:border-box;
+            position:relative;
+            min-height:100vh;
+            overflow-x:hidden;
+        }
+        .card{
+            max-width:900px;
+            margin: 0 auto;
+            padding:24px;
+            border-radius:12px;
+            background: rgba(255,255,255,0.3);
+            position:relative;
+            z-index:2;
+        }
+        h2{
+            margin:0 0 12px 0;
+            font-size:28px;
+            font-weight:bold;
+        }
+        .buttons{
+            margin-top:14px;
+        }
+        button{
+            background: var(--rosa);
+            color: #000;
+            border:none;
+            padding:10px 18px;
+            margin:6px;
+            border-radius:10px;
+            font-family: 'Spectral', serif;
+            cursor:pointer;
+            font-size:16px;
+            font-weight:bold;
+        }
+        #poema{
+            font-size:18px;
+            line-height:1.6;
+            max-width:860px;
+            margin:18px auto;
+            white-space: pre-line;
+            color: #000;
+            text-align:left;
+            font-weight:bold;
+            background: var(--rosa);
+            padding:10px;
+            border-radius:8px;
+            position:relative;
+            z-index:2;
+        }
+        .decoracion{
+            position:absolute;
+            font-size:22px;
+            font-weight:bold;
+            color: var(--rosa);
+            z-index:1;
+            opacity:0.9;
+        }
+        @media (max-width:600px){
+            h2{ font-size:20px; }
+            #poema{ font-size:16px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Corazones dispersos -->
+    <span class="decoracion" style="top:5%;left:10%;">🩷</span>
+    <span class="decoracion" style="top:15%;left:70%;">🩷</span>
+    <span class="decoracion" style="top:25%;left:20%;">🩷</span>
+    <span class="decoracion" style="top:30%;left:80%;">🩷</span>
+    <span class="decoracion" style="top:40%;left:15%;">🩷</span>
+    <span class="decoracion" style="top:45%;left:75%;">🩷</span>
+    <span class="decoracion" style="top:55%;left:25%;">🩷</span>
+    <span class="decoracion" style="top:60%;left:65%;">🩷</span>
+    <span class="decoracion" style="top:70%;left:10%;">🩷</span>
+    <span class="decoracion" style="top:75%;left:80%;">🩷</span>
+    <span class="decoracion" style="top:85%;left:30%;">🩷</span>
+    <span class="decoracion" style="top:90%;left:60%;">🩷</span>
+
+    <div class="card">
+        <div id="pregunta1">
+            <h2>¿Me amas?</h2>
+            <div class="buttons">
+                <button onclick="mostrarInversa()">Sí</button>
+                <button onclick="mostrarInversa()">Sí</button>
+            </div>
+        </div>
+
+        <div id="inversa" style="display:none;">
+            <h2>Leí inversa, si es no y no es si, osea que no me amas... yo sí te amo :c</h2>
+            <div class="buttons">
+                <button onclick="mostrarTeOdio()">Entonces sí</button>
+                <button onclick="mostrarTrolleada()">Entonces no</button>
+            </div>
+        </div>
+
+        <div id="teodio" style="display:none;">
+            <h2>Te odio 😔</h2>
+        </div>
+
+        <div id="trolleada" style="display:none;">
+            <h2>JA, TROLLEADA BOT</h2>
+        </div>
+
+        <div id="decoracion" style="display:none;">
+            <div id="poema"></div>
+        </div>
+    </div>
+
+    <script>
+        const textoPoema = `Bella doncella que con sus ojos me hace ver galaxias, universos y estrellas, en tí, encontré la perfección que en ninguna otra he encontrado, la complementación que me hace vernos como uno y la obtención de un amor que nunca estuvo en mi imaginación.
+
+El anhelo de tus besos consume mis pensamientos y, en los cimientos de nuestro amor, mis sentimientos logran surgir desvaneciendo mis lamentos con los simples movimientos de tu labios.
+
+Te amo como aquel que ama a un cantante, pues mi melodía favorita es tu risa y mi canción interminable tu voz, la cuál entra en el vacío de mi mente y se queda en mis sueños he imaginaciones.
+
+En ti, halle la paz y la tranquilidad que solo se encuentra después de la muerte, pues, tu forma de tratarme hace que mi ser se sienta en el cielo y mi alma, fuera de este plano.
+
+Sere Judas si tengo que traicionar al resto del mundo con tal de poder estar en tu presencia durante mi inmunda vida, que a tu lado, se vuelve perfecta y gratificante.
+
+Cada vez que pienso en amarte por siempre mi mente estalla de felicidad y angustia, alegría por tenerte y miedo por perderte.
+
+Si te vas, seré tu soledad, te acompañaré como fantasma y me quedaré para ser la luciérnaga que alumbrará las noches de frío y penumbra, pues, te amo.
+
+Serás el tatuaje que nunca borraré de mi piel, me quedarás incluso durante la muerte, la herida que nunca lograré sanar y la cicatriz que me acompañará en la siguiente vida, pues, te amo.
+
+Y si te quedas, seré el hombre que estuvo para ti hasta cuándo no quisiste que estuviera, me encargaré de que incluso cuando llores, seas feliz, pues, te amo.
+
+Te adoro, te anhelo y te quiero, si te vas, me iré contigo, y si te quedas, nunca me marcharé del lado de la mujer que me da la felicidad que, al fin y al cabo, ni en mis sueños encuentro, me quedaré, pues, te amo.`;
+
+        const poemaEl = document.getElementById('poema');
+        let i = 0;
+        let typingTimeout = null;
+
+        function mostrarInversa(){
+            document.getElementById('pregunta1').style.display = 'none';
+            document.getElementById('inversa').style.display = 'block';
+        }
+
+        function mostrarTeOdio(){
+            document.getElementById('inversa').style.display = 'none';
+            document.getElementById('teodio').style.display = 'block';
+        }
+
+        function mostrarTrolleada(){
+            document.getElementById('inversa').style.display = 'none';
+            document.getElementById('trolleada').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('trolleada').style.display = 'none';
+                mostrarPoema();
+            }, 2000);
+        }
+
+        function mostrarPoema(){
+            cancelTyping();
+            i = 0;
+            poemaEl.innerHTML = "";
+            document.getElementById('decoracion').style.display = 'block';
+            escribirPoema();
+        }
+
+        function escribirPoema(){
+            if (i < textoPoema.length){
+                poemaEl.innerHTML += textoPoema.charAt(i);
+                i++;
+                typingTimeout = setTimeout(escribirPoema, 45);
+            } else {
+                cancelTyping();
+            }
+        }
+
+        function cancelTyping(){
+            if (typingTimeout){
+                clearTimeout(typingTimeout);
+                typingTimeout = null;
+            }
+        }
+    </script>
+</body>
+</html>
